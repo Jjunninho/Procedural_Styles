@@ -1,0 +1,400 @@
+{
+  "meta": {
+    "version": "2.0",
+    "generated_at": "2026-03-02T22:13:15.351716",
+    "total_midis": 164472,
+    "k_clusters": 6,
+    "method": "kmeans",
+    "silhouette": 0.1126,
+    "feature_dims": 32
+  },
+  "clusters": {
+    "cluster_00": {
+      "label": "🎵 CHILLWAVE #0",
+      "genre": "electronic",
+      "color": "#94a3b8",
+      "style_key": "chillwave",
+      "size": 37468,
+      "bpm_range": [
+        77,
+        140
+      ],
+      "bpm_median": 114,
+      "key": 60,
+      "scale": "major",
+      "prog": [
+        0,
+        3,
+        4,
+        5
+      ],
+      "drumStyle": "rock",
+      "bars": 8,
+      "rhythmDensity": 0.064,
+      "leapChance": 0.664,
+      "arpDensity": 0.744,
+      "swing": 0.34,
+      "octaveSpread": 2,
+      "chordType": "seventh",
+      "velocityRange": [
+        57,
+        120
+      ],
+      "fillChance": 0.28,
+      "syncopation": 0.0,
+      "rhythmicEntropy": 0.0,
+      "consonanceScore": 0.5,
+      "chromaticRatio": 0.0,
+      "tempoChangeMean": 42.12,
+      "representative_files": [
+        "C:\\DEV\\biblioteca\\Biblioteca_Organizada\\Classico_Rapido\\Medio\\Denso\\jp7_33.mid",
+        "C:\\DEV\\biblioteca\\Biblioteca_Organizada\\Classico_Rapido\\Lento\\Denso\\mthmwo4c_1.mid",
+        "C:\\DEV\\biblioteca\\Biblioteca_Organizada\\Indefinido\\Lento\\Denso\\youlovewho.mid",
+        "C:\\DEV\\biblioteca\\Biblioteca_Organizada\\Pop_Guitarra\\Medio\\Denso\\19almin.mid",
+        "C:\\DEV\\biblioteca\\Biblioteca_Organizada\\Pop_Guitarra\\Medio\\Denso\\Albeniz_Minueto_a_Silvia.mid"
+      ],
+      "top_scales": {
+        "major": 12218,
+        "lydian": 6358,
+        "pentatonicMin": 4416,
+        "mixolydian": 3921,
+        "pentatonic": 3473
+      },
+      "top_keys": {
+        "C": 21987,
+        "D": 7074,
+        "C#": 3174,
+        "E": 2863,
+        "A": 797
+      }
+    },
+    "cluster_01": {
+      "label": "🎵 DREAMPOP #1",
+      "genre": "pop",
+      "color": "#94a3b8",
+      "style_key": "dreampop",
+      "size": 18250,
+      "bpm_range": [
+        84,
+        140
+      ],
+      "bpm_median": 120,
+      "key": 61,
+      "scale": "pentatonicMin",
+      "prog": [
+        0,
+        3,
+        4,
+        5
+      ],
+      "drumStyle": "rock",
+      "bars": 8,
+      "rhythmDensity": 0.097,
+      "leapChance": 0.707,
+      "arpDensity": 0.836,
+      "swing": 0.418,
+      "octaveSpread": 2,
+      "chordType": "seventh",
+      "velocityRange": [
+        40,
+        127
+      ],
+      "fillChance": 0.37,
+      "syncopation": 0.0,
+      "rhythmicEntropy": 0.0,
+      "consonanceScore": 0.5,
+      "chromaticRatio": 0.0,
+      "tempoChangeMean": 27.32,
+      "representative_files": [
+        "C:\\DEV\\biblioteca\\Biblioteca_Organizada\\Rock\\Medio\\Muito_Denso\\Awolnation_-_Sail__Intricacy_20130130013340.mid",
+        "C:\\DEV\\biblioteca\\Biblioteca_Organizada\\Eletronico\\Lento\\Muito_Denso\\mango_oro[1].mid",
+        "C:\\DEV\\biblioteca\\Biblioteca_Organizada\\Eletronico\\Lento\\Muito_Denso\\PCLASS3.MID",
+        "C:\\DEV\\biblioteca\\Biblioteca_Organizada\\Eletronico_Dance\\Medio\\Muito_Denso\\Cold-As-Ice-1.mid",
+        "C:\\DEV\\biblioteca\\Biblioteca_Organizada\\Ambient\\Medio\\Muito_Denso\\kesha-your_love_is_my_drug.mid"
+      ],
+      "top_scales": {
+        "pentatonicMin": 5082,
+        "major": 2635,
+        "dorian": 1920,
+        "mixolydian": 1894,
+        "harmMinor": 1630
+      },
+      "top_keys": {
+        "C#": 10653,
+        "D#": 2265,
+        "G#": 1700,
+        "C": 1603,
+        "F": 1156
+      }
+    },
+    "cluster_02": {
+      "label": "🎵 DREAMPOP #2",
+      "genre": "pop",
+      "color": "#94a3b8",
+      "style_key": "dreampop",
+      "size": 31233,
+      "bpm_range": [
+        83,
+        144
+      ],
+      "bpm_median": 120,
+      "key": 60,
+      "scale": "pentatonicMin",
+      "prog": [
+        0,
+        3,
+        4,
+        5
+      ],
+      "drumStyle": "rock",
+      "bars": 8,
+      "rhythmDensity": 0.09,
+      "leapChance": 0.695,
+      "arpDensity": 0.826,
+      "swing": 0.448,
+      "octaveSpread": 2,
+      "chordType": "seventh",
+      "velocityRange": [
+        40,
+        127
+      ],
+      "fillChance": 0.35,
+      "syncopation": 0.0,
+      "rhythmicEntropy": 0.0,
+      "consonanceScore": 0.5,
+      "chromaticRatio": 0.0,
+      "tempoChangeMean": 30.2,
+      "representative_files": [
+        "C:\\DEV\\biblioteca\\Biblioteca_Organizada\\Rock\\Medio\\Muito_Denso\\Penny_Lane_1.mid",
+        "C:\\DEV\\biblioteca\\Biblioteca_Organizada\\Eletronico\\Lento\\Muito_Denso\\29 settembre (3).mid",
+        "C:\\DEV\\biblioteca\\Biblioteca_Organizada\\Eletronico_Pop\\Medio\\Muito_Denso\\Drtarrgm.mid",
+        "C:\\DEV\\biblioteca\\Biblioteca_Organizada\\Jazz\\Lento\\Muito_Denso\\weveonly2.mid",
+        "C:\\DEV\\biblioteca\\Biblioteca_Organizada\\Ambient\\Muito_Lento\\Denso\\J.M.JARRE.Calypso part 3.mid"
+      ],
+      "top_scales": {
+        "pentatonicMin": 8888,
+        "minor": 7619,
+        "dorian": 6428,
+        "phrygian": 2705,
+        "mixolydian": 2572
+      },
+      "top_keys": {
+        "C": 23805,
+        "G": 3141,
+        "F": 2037,
+        "D": 1219,
+        "C#": 673
+      }
+    },
+    "cluster_03": {
+      "label": "🎵 JAPANESE #3",
+      "genre": "world",
+      "color": "#94a3b8",
+      "style_key": "japanese",
+      "size": 6280,
+      "bpm_range": [
+        107,
+        144
+      ],
+      "bpm_median": 128,
+      "key": 60,
+      "scale": "pentatonicMin",
+      "prog": [
+        0,
+        3,
+        4,
+        5
+      ],
+      "drumStyle": "sparse",
+      "bars": 8,
+      "rhythmDensity": 0.03,
+      "leapChance": 0.245,
+      "arpDensity": 0.301,
+      "swing": 0.243,
+      "octaveSpread": 1,
+      "chordType": "power",
+      "velocityRange": [
+        64,
+        110
+      ],
+      "fillChance": 0.16,
+      "syncopation": 0.0,
+      "rhythmicEntropy": 0.0,
+      "consonanceScore": 0.5,
+      "chromaticRatio": 0.0,
+      "tempoChangeMean": 3.5,
+      "representative_files": [
+        "C:\\DEV\\biblioteca\\Biblioteca_Organizada\\Indefinido\\Rapido\\Normal\\juno_reactor__pistolero__ambia.mid",
+        "C:\\DEV\\biblioteca\\Biblioteca_Organizada\\Piano\\Rapido\\Denso\\Jones__-_Get_Low__Thund3rJunky_20101202183120.mid",
+        "C:\\DEV\\biblioteca\\Biblioteca_Organizada\\Indefinido\\Medio\\Normal\\Dimitri Vegas & Like Mike - Under The Water (Futur Tiny Wave Remix).mid",
+        "C:\\DEV\\biblioteca\\Biblioteca_Organizada\\Indefinido\\Lento\\Normal\\lalala2.MID",
+        "C:\\DEV\\biblioteca\\Biblioteca_Organizada\\Indefinido\\Medio\\Denso\\latino lover.mid"
+      ],
+      "top_scales": {
+        "pentatonicMin": 1738,
+        "pentatonic": 1180,
+        "major": 982,
+        "blues": 461,
+        "harmMinor": 396
+      },
+      "top_keys": {
+        "C": 3068,
+        "D": 903,
+        "C#": 804,
+        "E": 461,
+        "G": 263
+      }
+    },
+    "cluster_04": {
+      "label": "🎵 DREAMPOP #4",
+      "genre": "pop",
+      "color": "#94a3b8",
+      "style_key": "dreampop",
+      "size": 29254,
+      "bpm_range": [
+        90,
+        142
+      ],
+      "bpm_median": 120,
+      "key": 62,
+      "scale": "pentatonicMin",
+      "prog": [
+        0,
+        3,
+        4,
+        5
+      ],
+      "drumStyle": "rock",
+      "bars": 8,
+      "rhythmDensity": 0.115,
+      "leapChance": 0.704,
+      "arpDensity": 0.876,
+      "swing": 0.469,
+      "octaveSpread": 2,
+      "chordType": "seventh",
+      "velocityRange": [
+        40,
+        127
+      ],
+      "fillChance": 0.36,
+      "syncopation": 0.0,
+      "rhythmicEntropy": 0.0,
+      "consonanceScore": 0.5,
+      "chromaticRatio": 0.0,
+      "tempoChangeMean": 11.04,
+      "representative_files": [
+        "C:\\DEV\\biblioteca\\Biblioteca_Organizada\\Jazz\\Muito_Lento\\Muito_Denso\\Hero.mid",
+        "C:\\DEV\\biblioteca\\Biblioteca_Organizada\\Pop_Guitarra\\Lento\\Muito_Denso\\07STEHAU.MID",
+        "C:\\DEV\\biblioteca\\Biblioteca_Organizada\\Pop_Guitarra\\Lento\\Muito_Denso\\07STEHAU (2).MID",
+        "C:\\DEV\\biblioteca\\Biblioteca_Organizada\\Eletronico_Dance\\Medio\\Muito_Denso\\J.JACKSON.Someone to call my lover K.MID",
+        "C:\\DEV\\biblioteca\\Biblioteca_Organizada\\Eletronico_Dance\\Rapido\\Muito_Denso\\maroon_5-kiwi.mid"
+      ],
+      "top_scales": {
+        "pentatonicMin": 8204,
+        "major": 5460,
+        "phrygian": 4120,
+        "pentatonic": 4074,
+        "harmMinor": 2280
+      },
+      "top_keys": {
+        "D": 9118,
+        "C#": 7957,
+        "E": 4237,
+        "F#": 3551,
+        "C": 2264
+      }
+    },
+    "cluster_05": {
+      "label": "🎵 DREAMPOP #5",
+      "genre": "pop",
+      "color": "#94a3b8",
+      "style_key": "dreampop",
+      "size": 41987,
+      "bpm_range": [
+        88,
+        140
+      ],
+      "bpm_median": 120,
+      "key": 60,
+      "scale": "major",
+      "prog": [
+        0,
+        3,
+        4,
+        5
+      ],
+      "drumStyle": "rock",
+      "bars": 8,
+      "rhythmDensity": 0.117,
+      "leapChance": 0.696,
+      "arpDensity": 0.887,
+      "swing": 0.495,
+      "octaveSpread": 2,
+      "chordType": "seventh",
+      "velocityRange": [
+        40,
+        127
+      ],
+      "fillChance": 0.36,
+      "syncopation": 0.0,
+      "rhythmicEntropy": 0.0,
+      "consonanceScore": 0.5,
+      "chromaticRatio": 0.0,
+      "tempoChangeMean": 10.59,
+      "representative_files": [
+        "C:\\DEV\\biblioteca\\Biblioteca_Organizada\\Jazz\\Lento\\Muito_Denso\\ONEMOMEN_1.MID",
+        "C:\\DEV\\biblioteca\\Biblioteca_Organizada\\Rock\\Medio\\Muito_Denso\\Spice Girls - Stop.mid",
+        "C:\\DEV\\biblioteca\\Biblioteca_Organizada\\Rock\\Medio\\Muito_Denso\\0SMOOTHO.MID",
+        "C:\\DEV\\biblioteca\\Biblioteca_Organizada\\Jazz\\Lento\\Muito_Denso\\One-Moment-In-Time-2_1.mid",
+        "C:\\DEV\\biblioteca\\Biblioteca_Organizada\\Jazz\\Lento\\Muito_Denso\\onemomen L.mid"
+      ],
+      "top_scales": {
+        "major": 11607,
+        "pentatonicMin": 8229,
+        "mixolydian": 6427,
+        "pentatonic": 6229,
+        "lydian": 5536
+      },
+      "top_keys": {
+        "C": 32493,
+        "D": 5141,
+        "E": 2127,
+        "G": 1807,
+        "A": 213
+      }
+    }
+  },
+  "style_stats": {
+    "bpm_global_range": [
+      15,
+      782
+    ],
+    "scale_distribution": {
+      "pentatonicMin": 36557,
+      "major": 33347,
+      "pentatonic": 16631,
+      "mixolydian": 15131,
+      "lydian": 13891,
+      "minor": 12868,
+      "dorian": 11073,
+      "phrygian": 10811,
+      "harmMinor": 9771,
+      "blues": 4392
+    },
+    "key_distribution": {
+      "C": 85220,
+      "D": 23480,
+      "C#": 23278,
+      "E": 9730,
+      "G": 6131,
+      "F#": 4517,
+      "F": 3646,
+      "D#": 2568,
+      "A": 2261,
+      "G#": 2013,
+      "B": 991,
+      "A#": 637
+    },
+    "drum_prevalence": 0.641
+  }
+}

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PROCEDURAL STYLES — Engine v4 (Genome)</title>
+  <link rel="stylesheet" href="css/neon.css">
+</head>
+<body>
+<div class="app-shell">
+
+  <!-- ── HEADER ─────────────────────────────────────────── -->
+  <header class="glow-header">
+    <div class="header-left">
+      <h1>PROCEDURAL<span class="dot">·</span>STYLES <span class="ver">v4.0</span></h1>
+      <div class="status-line" id="status-line">// AGUARDANDO GÊNERO...</div>
+    </div>
+    <div class="header-right">
+      <div class="header-stats">
+        <div class="hstat">
+          <span class="lbl">GÊNERO</span>
+          <span class="val" id="disp-genre">---</span>
+        </div>
+        <div class="hstat">
+          <span class="lbl">BPM</span>
+          <span class="val" id="disp-bpm">---</span>
+        </div>
+        <div class="hstat">
+          <span class="lbl">KEY</span>
+          <span class="val" id="disp-key">---</span>
+        </div>
+        <div class="hstat">
+          <span class="lbl">ESCALA</span>
+          <span class="val" id="disp-scale">---</span>
+        </div>
+      </div>
+      <!-- Waveform activity indicator -->
+      <div class="waveform-bars" id="waveform-bars">
+        <div class="bar" style="height:4px"></div>
+        <div class="bar" style="height:4px"></div>
+        <div class="bar" style="height:4px"></div>
+        <div class="bar" style="height:4px"></div>
+        <div class="bar" style="height:4px"></div>
+        <div class="bar" style="height:4px"></div>
+        <div class="bar" style="height:4px"></div>
+        <div class="bar" style="height:4px"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── VISUALIZER ──────────────────────────────────────── -->
+  <section class="viz-wrap">
+    <canvas id="neon-canvas"></canvas>
+    <div class="viz-overlay">
+      <span class="viz-label">PIANO ROLL</span>
+      <span class="beat-counter" id="beat-counter">0.0</span>
+    </div>
+  </section>
+
+  <!-- ── TRANSPORT ──────────────────────────────────────── -->
+  <section class="transport">
+    <button id="btn-play"  class="neon-btn play-btn" onclick="togglePlay()">▶ PLAY</button>
+    <button id="btn-stop"  class="neon-btn stop-btn" onclick="stopAll()">■ STOP</button>
+    <button id="btn-loop"     class="neon-btn sm icon" title="Loop simples">⟳</button>
+    <button id="btn-infinite" class="neon-btn sm icon" title="∞ Loop Evolutivo — gera continuamente sem repetir" onclick="toggleInfinite()">∞</button>
+
+    <div class="slider-wrap">
+      <label>BPM</label>
+      <input type="range" id="bpm-slider" min="40" max="240" value="120" step="1" style="width:90px">
+      <span class="val" id="bpm-value">120</span>
+    </div>
+
+    <div class="slider-wrap">
+      <label>VOL</label>
+      <input type="range" id="master-volume" min="0" max="100" value="80" style="width:70px">
+    </div>
+
+	<div class="transport-right">
+      <button id="btn-random"  class="neon-btn sm" title="Gerar aleatório">🎲 RANDOM</button>
+      <button id="btn-reverb"  class="neon-btn sm icon" title="Reverb">🎛</button>
+      
+      <div style="width: 1px; height: 20px; background: var(--border); margin: 0 0.5rem;"></div>
+
+      <div style="display: flex; align-items: center; gap: 0.4rem;" title="Duração do arquivo MIDI exportado em segundos">
+        <label style="font-family: var(--mono); font-size: 0.72rem; color: var(--muted); letter-spacing: 1px;">MIDI</label>
+        <input type="number" id="midi-duration" min="1" max="3600" value="30" step="1" class="neon-input">
+        <span style="font-family: var(--mono); font-size: 0.75rem; color: var(--cyan);">s</span>
+        <button id="btn-midi" class="neon-btn outline-btn sm" style="margin-left: 0.2rem;" title="Exportar MIDI">⬇ EXPORTAR</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CHORD DISPLAY ────────────────────────────────────── -->
+  <div class="chord-display" id="chord-display">
+    <div class="key-info">
+      <div class="info-item">
+        <span class="lbl">ESTILO</span>
+        <span class="val" id="disp-style">---</span>
+      </div>
+      <div class="info-item">
+        <span class="lbl">COMPASSO</span>
+        <span class="val" id="disp-bars">---</span>
+      </div>
+      <div class="info-item">
+        <span class="lbl">SWING</span>
+        <span class="val" id="disp-swing">---</span>
+      </div>
+    </div>
+    <div class="prog-display" id="prog-display">
+      <!-- chord pills -->
+    </div>
+  </div>
+
+  <!-- ── MIXER ──────────────────────────────────────────── -->
+  <section class="mixer" id="track-mixer">
+    <!-- Gerado dinamicamente -->
+  </section>
+
+  <!-- ── GENRE GRID ─────────────────────────────────────── -->
+  <section class="genre-section">
+    <div class="section-header">GÊNEROS</div>
+    <div class="genre-grid" id="genre-grid"></div>
+  </section>
+
+  <!-- ── LEARNED PRESETS ───────────────────────────────── -->
+  <section class="genre-section" id="learned-section">
+    <div class="section-header">📂 PRESETS APRENDIDOS <span style="font-size:0.7rem;color:var(--muted);font-weight:normal;letter-spacing:1px;">— calibrados de MIDI real</span></div>
+    <div class="genre-grid" id="learned-grid"></div>
+  </section>
+
+  <!-- ── MAGENTA AI PANEL ───────────────────────────────── -->
+  <section class="mg-panel" id="mg-panel">
+
+    <div class="section-header">
+      🤖 IA · MAGENTA
+      <span class="mg-badge" id="mg-badge">OFFLINE</span>
+    </div>
+
+    <!-- Mode selector -->
+    <div class="mg-mode-row">
+      <button class="mg-opt neon-btn sm active" data-mg="melody">🎵 MELODIA</button>
+      <button class="mg-opt neon-btn sm"        data-mg="drums">🥁 BATERIA</button>
+    </div>
+
+    <!-- Model selector (melody only) -->
+    <div class="mg-row" id="mgModelWrap">
+      <label class="mg-lbl">MODELO</label>
+      <select id="mgModelSel" class="mg-select">
+        <option value="basic_rnn">BASIC RNN — rápido (~30s)</option>
+        <option value="melody_rnn">MELODY RNN — equilibrado (~1min)</option>
+        <option value="chord_pitches_improv">CHORD IMPROV — máx qualidade (~3min)</option>
+      </select>
+    </div>
+
+    <!-- Temperature -->
+    <div class="mg-row">
+      <label class="mg-lbl">TEMPERATURA</label>
+      <input type="range" id="mgTemp" min="0.1" max="2.0" step="0.05" value="1.0" style="width:120px;accent-color:var(--purple)">
+      <span class="mg-val" id="mgTempVal">1.00</span>
+      <span class="mg-hint">← preciso · criativo →</span>
+    </div>
+
+    <!-- Bars / Duration -->
+    <div class="mg-row">
+      <label class="mg-lbl">COMPASSOS IA</label>
+      <input type="number" id="mgBars" min="1" max="64" value="8"
+             style="width:60px;background:#0a0a1a;color:#00f3ff;border:1px solid #00f3ff44;
+                    border-radius:4px;padding:2px 6px;font-family:inherit;text-align:center;">
+      <span class="mg-hint">compassos que a IA vai gerar</span>
+    </div>
+
+    <!-- Progress bar -->
+    <div class="mg-bar-wrap" id="mgBar" style="display:none">
+      <div class="mg-bar-fill" id="mgBarFill"></div>
+    </div>
+
+    <!-- Status -->
+    <div class="mg-status" id="mgStatus">▸ Selecione um modelo e clique em CARREGAR IA.</div>
+
+    <!-- Action buttons -->
+    <div class="mg-actions">
+      <button id="mgLoadBtn"    class="neon-btn sm mg-load">⚡ CARREGAR IA</button>
+      <button id="mgGenBtn"     class="neon-btn sm mg-gen"     disabled>🧠 GERAR COM IA</button>
+      <button id="mgImproveBtn" class="neon-btn sm mg-improve" disabled title="Cria uma variação orgânica da melodia atual mantendo baixo/arpejo/bateria">✨ MELHORAR COM IA</button>
+      <button id="mgPlayBtn"    class="neon-btn sm"            disabled>▶ PLAY IA</button>
+      <button id="mgStopBtn"    class="neon-btn stop-btn sm"   disabled>■ STOP</button>
+      <button id="mgMidiBtn"    class="neon-btn outline-btn sm" disabled>⬇ MIDI IA</button>
+    </div>
+
+  </section>
+
+  <!-- ── FOOTER ──────────────────────────────────────────── -->
+  <footer class="app-footer">
+    <span>PROCEDURAL STYLES ENGINE · WEB AUDIO API</span>
+    <span id="node-count">NODES: 0</span>
+    <span id="ctx-state">CTX: —</span>
+  </footer>
+
+</div>
+
+<!-- ── Magenta.js: bundle UMD — cria window.mm automaticamente ── -->
+<script>
+  (function() {
+    var URLS = [
+      'https://cdn.jsdelivr.net/npm/@magenta/music@1.23.1/dist/music.js',
+      'https://unpkg.com/@magenta/music@1.23.1/dist/music.js',
+    ];
+    var idx = 0;
+    function tryLoad() {
+      if (idx >= URLS.length) {
+        console.error('[Magenta] Todos os CDNs falharam.');
+        window.dispatchEvent(new Event('magenta-failed'));
+        return;
+      }
+      var s = document.createElement('script');
+      s.src = URLS[idx++];
+      s.onload = function() {
+        console.log('[Magenta] ✅ UMD carregado | MusicRNN:', !!(window.mm && window.mm.MusicRNN));
+        window.dispatchEvent(new Event('magenta-ready'));
+      };
+      s.onerror = function() {
+        console.warn('[Magenta] ❌ Falhou:', s.src);
+        tryLoad();
+      };
+      document.head.appendChild(s);
+    }
+    tryLoad();
+  })();
+</script>
+
+<!-- neon_ui.js: módulo ES principal -->
+<script type="module" src="js/neon_ui.js"></script>
+
+<!-- magenta.js: script clássico, carregado por último -->
+<script defer src="js/magentamusic.min.js"></script>
+<script defer src="js/magenta.js"></script>
+</body>
+</html>
